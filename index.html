@@ -8,45 +8,75 @@
     <meta name="author" content="John Polacek" />
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/bigvideo.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
 </head>
 <body>
-	<div class="nav box">
-        <ul class="video-list">
-            <!--
-            <li><a href="vids/dock.mp4" class="playlist-btn">Video #1</a></li>
-            <li><a href="vids/river.mp4" class="playlist-btn">Video #2</a></li>
-            -->
-            <li>
-	            <button class="wiskey">
-				    <span class="button-text">I Want A Wiskey</span>
-				</button>
-            </li>
-            <li>
-	            <button class="beer">
-				    <span class="button-text">I Want A Beer</span>
-				</button>
-            </li>
-        </ul>
-    </div>
-    <!--
-    <div class="main">
-        <div id="overview" class="box">
-            <h1>BigVideo<span class="dimmed"><small>.</small>js</span></h1>
-            <h2>Random Ambient Loop Example</h2>
-        </div>
-    </div>
-    -->
+<div class="top-wrapper">
+	<div class="container">
+		<div class="top-inner">
+			
+		</div><!--/.top-inner-->
+	</div><!--/.container-->
+</div><!--/.top-wrapper-->
+<div class="row">
+	<div class="container">
+	    <div class="main">
+	        <div id="overview" class="box">
+	        	<div class="logo">
+	            	<img src="img/logo.png" alt="logo" />
+	        	</div><!--/.logo-->
+	        	<div class="crest">
+	            	<img src="img/crest.png" alt="crest" />
+	        	</div><!--/.crest-->
+	        </div><!--#overview-->
+	    </div><!--/.main-->
+	</div><!--/.container-->
+</div><!--/row-->
+<div class="row-fluid">
+	<div class="container">
+		<div class="main">
+			<div class="span6">
+				<div class="leftbanner beer">
+			    	<p>A Beer, Please</p>
+				</div><!--/.leftbanner-->
+			</div><!--/.span6-->
+			<div class="span6">
+				<div class="rightbanner wiskey">
+			    	<p>Wiskey,<br/> If You Would</p>
+				</div><!--/.rightbanner-->
+			</div><!--/.span6-->
+		</div><!--/.main-->
+	</div><!--/.container-->
+</div><!--/row-->
+<div class="row">
+	<div class="container">
+	    <div class="main">
+	    	<div class="thanks">
+		    	<img src="img/thanks.png" alt="thanks" />
+	    	</div><!--/.thanks-->
+	    </div><!--/.main-->
+	</div><!--/.container-->
+</div><!--/row-->
+<div class="bottom-wrapper">
+	<div class="container">
+		<div class="bottom-inner">
+			
+		</div><!--/.bottom-inner-->
+	</div><!--/.container-->
+</div><!--/.bottom-wrapper-->
 
     <!-- BigVideo Dependencies -->
   	<script>window.jQuery || document.write('<script src="js/jquery-1.7.2.min.js"><\/script>')</script>
     <script src="js/jquery-ui-1.8.22.custom.min.js"></script>
     <script src="js/jquery.imagesloaded.min.js"></script>
-    <script src="http://vjs.zencdn.net/c/video.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/video.js"></script>
+    <!--<script src="http://vjs.zencdn.net/c/video.js"></script>-->
     
-    <script src="js/jquery.backstretch.min.js"></script>
+    <!--<script src="js/jquery.backstretch.min.js"></script>
 	<script>
-	    $.backstretch(["img/background-dock.jpg"]);
-    </script>
+	    $.backstretch(["img/bg.png"]);
+    </script>-->
 
     <!-- BigVideo -->
     <script src="js/bigvideo.js"></script>
@@ -55,6 +85,14 @@
     <script>
 	    
 	    $(function() {
+	    	
+	    	var BV = new $.BigVideo({controls:false,doloop:false,});
+			var vids = ['vids/NewBeer.mp4'];
+			        
+			BV.init();
+			BV.show(vids,{ambient:true});
+		
+	    
 			
 			// Playlist button click starts video, enables autohiding
             $('.playlist-btn').on('click', function(e) {
@@ -84,9 +122,8 @@
 			    }
 			});
 			*/
-
-     
-            
+			
+			   
             
             //if click on wiskey
             $('.wiskey').click(function() {
@@ -94,24 +131,24 @@
 			    
 			    //if has class "show" change text and play selected video... changed to wiskey so there is no need to double click
 			    if ($this.hasClass('wiskey')) {
-			        $this.text('Refill');
+			        $this.html('<p style="padding-top:10px;">Refill</p>');
 
-			        var BV = new $.BigVideo({controls:true});
+			        var BV = new $.BigVideo({controls:false});
 			        BV.init();
 			        BV.show('vids/NewWhisky.mp4');
 
 			        //change text of .beer
-				    $('.beer').text('I Want Beer');    
+				    $('.beer').text('I Want Beer').wrapInner("<p></p>");    
 			    }    
 			});//close .wiskey if statement
-			
+
 
 			
 			$('.beer').click(function() {
 			    var $this = $(this);
 			
 			    if ($this.hasClass('beer')) {
-			        $this.text('Refill');
+			        $this.text('Refill').wrapInner("<p></p>");
 
 			        //play bg video
 			        var BV = new $.BigVideo({controls:false,doloop:false});
@@ -121,11 +158,9 @@
 			        BV.show(vids,{ambient:true});
 			     
 			        //Change .wiskey text
-				    $('.wiskey').text('I Want Whisky');     
+				    $('.wiskey').html('Wiskey, <br/>If You Would').wrapInner("<p></p>");     
 			    }
-            });//close .beer if statement
-            
-                  
+            });//close .beer if statement  
             
 	    });
     </script>
