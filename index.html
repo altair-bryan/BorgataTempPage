@@ -3,8 +3,8 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>BigVideo.js - The jQuery Plugin for Big Background Video</title>
-    <meta name="description" content="BigVideo.js - The jQuery Plugin for Big Background Video" />
+    <title>Borgata</title>
+    <meta name="description" content="Borgata - A New Kind Of Beer" />
     <meta name="author" content="John Polacek" />
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/bigvideo.css">
@@ -14,7 +14,7 @@
 <div class="top-wrapper">
 	<div class="container">
 		<div class="top-inner">
-			
+			<p>LOYALLY HAND-CRAFTED</p>
 		</div><!--/.top-inner-->
 	</div><!--/.container-->
 </div><!--/.top-wrapper-->
@@ -60,7 +60,14 @@
 <div class="bottom-wrapper">
 	<div class="container">
 		<div class="bottom-inner">
-			
+			<div class="socialmedia">
+				<div class="facebook"></div><!--/.facebook-->
+				<div class="twitter"></div><!--/.twitter-->
+			</div><!--/.socialmedia-->
+			<p>
+				Coming Soon to 1116 Jackson St, Omaha, NE 68102<br/>
+				<a href="mailto:info@borgatabeerandspirits.com">info@borgatabeerandspirits.com</a>
+			</p>
 		</div><!--/.bottom-inner-->
 	</div><!--/.container-->
 </div><!--/.bottom-wrapper-->
@@ -73,10 +80,10 @@
     <script src="js/video.js"></script>
     <!--<script src="http://vjs.zencdn.net/c/video.js"></script>-->
     
-    <!--<script src="js/jquery.backstretch.min.js"></script>
+    <script src="js/jquery.backstretch.min.js"></script>
 	<script>
-	    $.backstretch(["img/bg.png"]);
-    </script>-->
+	    $.backstretch(["img/bg_new.png"]);
+    </script>
 
     <!-- BigVideo -->
     <script src="js/bigvideo.js"></script>
@@ -86,12 +93,13 @@
 	    
 	    $(function() {
 	    	
+	    	/*
 	    	var BV = new $.BigVideo({controls:false,doloop:false,});
-			var vids = ['vids/NewBeer.mp4'];
+			var vids = ['vids/NewWhisky.mp4'];
 			        
 			BV.init();
 			BV.show(vids,{ambient:true});
-		
+			*/
 	    
 			
 			// Playlist button click starts video, enables autohiding
@@ -133,7 +141,7 @@
 			    if ($this.hasClass('wiskey')) {
 			        $this.html('<p style="padding-top:10px;">Refill</p>');
 
-			        var BV = new $.BigVideo({controls:false});
+			        var BV = new $.BigVideo({controls:false,doloop:false});
 			        BV.init();
 			        BV.show('vids/NewWhisky.mp4');
 

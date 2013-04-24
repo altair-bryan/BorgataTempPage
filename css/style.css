@@ -1,5 +1,5 @@
 .top-wrapper{ position: relative; background: url(../img/top-bg-repeat.png) repeat-x; width: 100%; height: 48px; }
-.top-inner{ position: relative; background: url(../img/top.png) repeat-x; width: 100%; height: 48px; }
+.top-inner{ position: relative; background: url(../img/top.png) repeat-x; width: 100%; height: 48px; text-align: center; }
 .main {
 	position:relative;
 	margin:0;
@@ -21,4 +21,9 @@
 }
 
 .bottom-wrapper{ position: fixed; bottom: 0; background: url(../img/bottom-bg-repeat.png) repeat-x; width: 100%; height: 102px; }
-.bottom-inner{ position: relative; background: url(../img/bottom.png) repeat-x; width: 100%; height: 102px; }
+.bottom-inner{ margin-top: 30px; position: relative; background: url(../img/bottom.png) repeat-x; width: 100%; height: 102px; text-align: center; color: #281200; }
+.bottom-inner a{ color: #281200; }
+.bottom-inner a:hover{ color: #281200; }
+.socialmedia{  }
+.socialmedia .facebook{  }
+.socialmedia .twitter{  }
