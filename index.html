@@ -6,8 +6,6 @@
     <title>BigVideo.js - The jQuery Plugin for Big Background Video</title>
     <meta name="description" content="BigVideo.js - The jQuery Plugin for Big Background Video" />
     <meta name="author" content="John Polacek" />
-    <meta name="viewport" content="width=device-width">
-    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:900&text=ABCDEFGHIJKLMNOPQRSTUVWXYZ' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/bigvideo.css">
 </head>
@@ -40,11 +38,15 @@
     -->
 
     <!-- BigVideo Dependencies -->
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
   	<script>window.jQuery || document.write('<script src="js/jquery-1.7.2.min.js"><\/script>')</script>
     <script src="js/jquery-ui-1.8.22.custom.min.js"></script>
     <script src="js/jquery.imagesloaded.min.js"></script>
     <script src="http://vjs.zencdn.net/c/video.js"></script>
+    
+    <script src="js/jquery.backstretch.min.js"></script>
+	<script>
+	    $.backstretch(["img/background-dock.jpg"]);
+    </script>
 
     <!-- BigVideo -->
     <script src="js/bigvideo.js"></script>
@@ -53,25 +55,6 @@
     <script>
 	    
 	    $(function() {
-        
-        
-        
-        
-        
-            var BV = new $.BigVideo({controls:false,doloop:true});
-            var vids = [
-                'vids/dock.mp4',
-                'vids/river.mp4'
-            ];
-            vids.sort(function() { return 0.5 - Math.random() }); // random order on load
-			BV.init();
-			BV.show(vids,{ambient:true});
-			
-			
-			
-			
-			
-			
 			
 			// Playlist button click starts video, enables autohiding
             $('.playlist-btn').on('click', function(e) {
@@ -82,47 +65,44 @@
             })
             
             
+            //orginal code
             
+            //<button onclick="showAll();" class="collapse-classes">
+			//    <span class="button-text">Show</span>
+			//</button>
+			
+            /*
+            $('.collapse-classes').click(function() {
+			    var $this = $(this);
+			
+			    $this.toggleClass('show');
+			
+			    if ($this.hasClass('show')) {
+			        $this.text('Show');
+			    } else {
+			        $this.text('Hide');
+			    }
+			});
+			*/
 
-            
+     
             
             
             //if click on wiskey
             $('.wiskey').click(function() {
 			    var $this = $(this);
-			
-			    $this.toggleClass('show');
 			    
-			    //if has class "show" change text and play selected video
-			    if ($this.hasClass('show')) {
+			    //if has class "show" change text and play selected video... changed to wiskey so there is no need to double click
+			    if ($this.hasClass('wiskey')) {
 			        $this.text('Refill');
-			        
-			        var BV = new $.BigVideo({controls:false,doloop:true});
-			        var vids = [
-			        	'vids/river.mp4'
-			        ];
-			        vids.sort(function() { return 0.5 - Math.random() }); // random order on load
+
+			        var BV = new $.BigVideo({controls:true});
 			        BV.init();
-			        BV.show(vids,{ambient:true});
+			        BV.show('vids/NewWhisky.mp4');
 
 			        //change text of .beer
-				    $('.beer').text('I Want Wiskey');  
-			        
-			    } /* else {
-			        $this.text('I want a Beer');
-			        
-			        
-			        var BV = new $.BigVideo({controls:false,doloop:true});
-			        var vids = [
-			        	'vids/dock.mp4'
-			        ];
-			        vids.sort(function() { return 0.5 - Math.random() }); // random order on load
-			        BV.init();
-			        BV.show(vids,{ambient:true});
- 
-			    }*/
-
-			    
+				    $('.beer').text('I Want Beer');    
+			    }    
 			});//close .wiskey if statement
 			
 
@@ -130,25 +110,19 @@
 			$('.beer').click(function() {
 			    var $this = $(this);
 			
-			    $this.toggleClass('show');
-			
-			    if ($this.hasClass('show')) {
+			    if ($this.hasClass('beer')) {
 			        $this.text('Refill');
 
 			        //play bg video
-			        var BV = new $.BigVideo({controls:false,doloop:true});
-			        var vids = [
-			        	'vids/dock.mp4'
-			        ];
-			        vids.sort(function() { return 0.5 - Math.random() }); // random order on load
+			        var BV = new $.BigVideo({controls:false,doloop:false});
+			        var vids = ['vids/NewBeer.mp4'];
+			        
 			        BV.init();
 			        BV.show(vids,{ambient:true});
 			     
 			        //Change .wiskey text
-				    $('.wiskey').text('I Want beer');
-				      
+				    $('.wiskey').text('I Want Whisky');     
 			    }
-            
             });//close .beer if statement
             
                   
