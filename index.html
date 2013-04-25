@@ -37,12 +37,12 @@
 		<div class="main">
 			<div class="span6">
 				<div class="leftbanner beer">
-			    	<p>A Beer, Please</p>
+			    	<p>A beer, please</p>
 				</div><!--/.leftbanner-->
 			</div><!--/.span6-->
 			<div class="span6">
 				<div class="rightbanner wiskey">
-			    	<p>Wiskey,<br/> If You Would</p>
+			    	<p>Whisky,<br/> if you would</p>
 				</div><!--/.rightbanner-->
 			</div><!--/.span6-->
 		</div><!--/.main-->
@@ -100,15 +100,26 @@
     <script>
 	    
 	    $(function() {
-	    	
-	    	/*
-	    	var BV = new $.BigVideo({controls:false,doloop:false,});
-			var vids = ['vids/NewWhisky.mp4'];
-			        
-			BV.init();
-			BV.show(vids,{ambient:true});
-			*/
-	    
+	
+		var ismobile=navigator.userAgent.match(/(iPad)|(iPhone)|(iPod)|(android)|(webOS)/i);
+		
+		if(ismobile){
+			//TO DO IF IS MOBILE
+			$.backstretch(["img/bg_new.png"]);
+			
+			 $(".wiskey").click(function(e) {
+				 e.preventDefault();
+				 $.backstretch('img/wiskey.png');
+			 });
+			
+			$(".beer").click(function(e) {
+				 e.preventDefault();
+				 $.backstretch('img/bg.png');
+			});
+		}
+		else{
+			//LOAD UP BG IMAGE JUST IN CASE VIDEO LOADS SLOWLY
+			$.backstretch(["img/bg_new.png"]);
 			
 			// Playlist button click starts video, enables autohiding
             $('.playlist-btn').on('click', function(e) {
@@ -139,22 +150,21 @@
 			});
 			*/
 			
-			   
-            
+					               
             //if click on wiskey
             $('.wiskey').click(function() {
 			    var $this = $(this);
 			    
 			    //if has class "show" change text and play selected video... changed to wiskey so there is no need to double click
 			    if ($this.hasClass('wiskey')) {
-			        $this.html('<p style="padding-top:10px;">Refill</p>');
+			        $this.html('<p style="padding-top:11px;">Refill</p>');
 
 			        var BV = new $.BigVideo({controls:false,doloop:false});
 			        BV.init();
 			        BV.show('vids/NewWhisky.mp4');
 
 			        //change text of .beer
-				    $('.beer').text('I Want Beer').wrapInner("<p></p>");    
+				    $('.beer').text('A beer, please').wrapInner("<p></p>");    
 			    }    
 			});//close .wiskey if statement
 
@@ -171,9 +181,11 @@
 			       BV.show('vids/NewBeer.mp4');
 			     
 			        //Change .wiskey text
-				    $('.wiskey').html('Wiskey, <br/>If You Would').wrapInner("<p></p>");     
+				    $('.wiskey').html('Whisky, <br/>if you would').wrapInner("<p></p>"); 
 			    }
             });//close .beer if statement  
+          
+          }//close else statement
             
 	    });
     </script>
