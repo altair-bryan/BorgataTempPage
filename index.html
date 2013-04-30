@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/bigvideo.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon"> 
 </head>
 <body>
 <div class="top-wrapper">
@@ -60,6 +61,12 @@
 <div class="bottom-wrapper">
 	<div class="container">
 		<div class="bottom-inner">
+			<p>
+				Coming Soon to 1116 Jackson St, Omaha, NE 68102
+			</p>
+			<p>
+				<a href="mailto:info@borgatabeerandspirits.com">info@borgatabeerandspirits.com</a>
+			</p>
 			<div class="socialmedia">
 				<ul>
 					<li>
@@ -70,12 +77,6 @@
 					</li>
 				</ul>
 			</div><!--/.socialmedia-->
-			<p>
-				Coming Soon to 1116 Jackson St, Omaha, NE 68102
-			</p>
-			<p>
-				<a href="mailto:info@borgatabeerandspirits.com">info@borgatabeerandspirits.com</a>
-			</p>
 		</div><!--/.bottom-inner-->
 	</div><!--/.container-->
 </div><!--/.bottom-wrapper-->
@@ -161,7 +162,7 @@
 
 			        var BV = new $.BigVideo({controls:false,doloop:false});
 			        BV.init();
-			        BV.show('vids/NewWhisky.mp4');
+			        BV.show('vids/NewWhisky.mp4', {altSource:'vids/NewWhisky.ogv'});
 
 			        //change text of .beer
 				    $('.beer').text('A beer, please').wrapInner("<p></p>");    
@@ -178,7 +179,7 @@
 
 			       var BV = new $.BigVideo({controls:false,doloop:false});
 			       BV.init();
-			       BV.show('vids/NewBeer.mp4');
+			       BV.show('vids/NewBeer.mp4', {altSource:'vids/NewBeer.ogv'});
 			     
 			        //Change .wiskey text
 				    $('.wiskey').html('Whisky, <br/>if you would').wrapInner("<p></p>"); 

@@ -1,0 +1,6 @@
+DirectoryIndex index.html
+
+#Options +FollowSymLinks
+#RewriteEngine on
+#RewriteCond %{HTTP_HOST} ^borgatabeerandspirits\.com
+#RewriteRule ^(.*)$ http://www.borgatabeerandspirits.com/$1 [R=permanent,L]

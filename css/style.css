@@ -22,11 +22,11 @@
 
 .bottom-wrapper{ position: fixed; bottom: 0; background: url(../img/bottom-bg-repeat.png) repeat-x; width: 100%; height: 102px; }
 .bottom-inner{ margin-top: 30px; position: relative; background: url(../img/bottom.png) repeat-x; width: 100%; height: 102px; text-align: center; color: #281200; }
-.bottom-inner p{ margin: -15px 0 12px 0; }
+.bottom-inner p{ margin: 0px 0 0 0; line-height: normal; }
 .bottom-inner a{ color: #281200; }
 .bottom-inner a:hover{ color: #281200; }
 .socialmedia{ width: 100%; }
 .socialmedia ul{ text-align: center; margin: 0 0 0 0; padding: 0 0 0 0; }
 .socialmedia ul li{ display: inline-block; list-style-type: none; }
-.socialmedia a.facebook{ background: url(../img/facebook.png) no-repeat; width: 48px; height: 47px; display: inline-block; margin: -5px 0 0 0; }
-.socialmedia a.twitter{ background: url(../img/twitter.png) no-repeat; width: 48px; height: 47px; display: inline-block; margin: -5px 0 0 0; }
+.socialmedia a.facebook{ background: url(../img/facebook.png) no-repeat; width: 32px; height: 32px; display: inline-block; margin: 0 0 0 0; }
+.socialmedia a.twitter{ background: url(../img/twitter.png) no-repeat; width: 32px; height: 32px; display: inline-block; margin: 0 0 0 0; }
