@@ -118,12 +118,16 @@
  
 /* Landscape phones and down */
 @media (max-width: 480px) {
+	.main{ margin-top: 35px; }
 	.main .crest{ padding-left: 0px; }
+	.main .crest img{ width: 50%; }
 	.main .logo{ padding-left: 0px; }
+	.main .logo img{ width: 50%; }
 	.main .thanks{ padding-left: 0px; padding-top: 0px; margin-top: -50px; }
-	.main .rightbanner{ margin-right: 0px; padding-right: 0px; width: 130px; background-size:100%; margin-top: -50px; }
+	.main .thanks img{ width: 50%; }
+	.main .rightbanner{ margin-right: 0px; padding-right: 0px; width: 130px; background-size:100%; margin-top: -30px; }
 	.main .rightbanner p{ font-size: 10px; padding-top: 3px; }
-	.main .leftbanner{ margin-left: 0px; padding-left: 0px; width: 130px; background-size:100%; margin-top: -50px; }
+	.main .leftbanner{ margin-left: 0px; padding-left: 0px; width: 130px; background-size:100%; margin-top: -30px; }
 	.main .leftbanner p{ font-size: 10px; padding-top: 5px; }
 	.bottom-inner p{ font-size: 10px; }
 }
